@@ -370,7 +370,7 @@ window.addEventListener('load', () => {
             wsUrl = "ws://127.0.0.1:8727"
         } else {
             const domain = window.location.port ? window.location.hostname + ":" + window.location.port : window.location.hostname;
-            wsUrl = (window.location.protocol === 'https:' ? 'wss://' : 'ws://') + domain + "/ws";
+            wsUrl = (window.location.protocol === 'https:' ? 'wss://' : 'ws://') + domain + "/ws/";
         }
         connect(wsUrl);
     }
