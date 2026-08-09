@@ -78,13 +78,18 @@ window.addEventListener('load', () => {
         flag.addEventListener("mousedown", () => {
             draggingTeam = flag.getAttribute("data-team");
         });
+        flag.addEventListener("touchstart", () => {
+            draggingTeam = flag.getAttribute("data-team");
+        });
     }
-    document.addEventListener("mouseup", (evt) => {
+    function onRelease(evt) {
         if (draggingTeam && evt.target.classList.contains("tierlist-label")) {
             setPrediction(draggingTeam, evt.target.getAttribute("data-placement"));
         }
         draggingTeam = null;
-    });
+    }
+    document.addEventListener("mouseup", onRelease);
+    document.addEventListener("touchend", onRelease);
 
     function drawState() {
         if (state.currentTab) {
