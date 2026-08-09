@@ -1,0 +1,6 @@
+/.idea
+.env
+/public/data/*.csv
+/public/data/*.xlsx
+/public/data/parse.py
+/public/data/stats25.json

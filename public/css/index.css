@@ -1,0 +1,265 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+
+  background-image: url("/public/assets/backgroundezwc.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-family: 'Segoe UI', 'sans-serif';
+}
+
+p, h1 {
+  margin: 0;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.error-text {
+  color: #ff7373;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#prediction-panel {
+  width: 95%;
+  height: 100%;
+
+  justify-content: space-evenly;
+}
+
+#predictions-row {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+
+.prediction {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tierlist {
+  width: 100%;
+  max-width: 400px;
+
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: repeat(11, auto);
+  gap: 1px;
+}
+
+.tierlist-label {
+  min-width: 60px;
+  margin: 0;
+
+  display: grid;
+  place-items: center;
+  padding: 0.2rem;
+
+  font-size: 12px;
+
+  outline: 1px solid white;
+}
+
+.tierlist-label.first {
+  color: gold;
+}
+
+.tierlist-label.second {
+  color: silver;
+}
+
+.tierlist-label.third {
+  color: #dd7f33;
+}
+
+.tierlist-row {
+  min-height: 32px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 0;
+
+  outline: 1px solid white;
+}
+
+.flag-img-container {
+  height: 32px;
+  position: relative;
+}
+
+.flag-img {
+  height: 32px;
+}
+
+.flag-overtext {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.commentator-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+
+.commentator-prediction {
+  font-size: 1.2em;
+}
+
+.commentator-prediction.first {
+  color: gold;
+}
+
+.commentator-prediction.second {
+  color: silver;
+}
+
+.commentator-prediction.third {
+  color: #dd7f33;
+}
+
+.commentator-name {
+  font-size: 1.2em;
+}
+
+.info-row {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#country-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#country-info > p {
+  font-size: 25px;
+}
+
+.country-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-name > h1 {
+  font-size: 40px;
+  text-wrap: nowrap;
+}
+
+.country-name > img {
+  height: 100%;
+}
+
+.players-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.players-container > h1 {
+  font-size: 30px;
+  text-align: center;
+
+  border-bottom: 2px solid white;
+}
+
+#country-no-team-2025 {
+  border: none;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
+}
+
+.player {
+  height: 40px;
+  width: 240px;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+
+  text-decoration: none;
+}
+
+.player.removed {
+  background: rgb(156 14 14 / 0.5);
+}
+
+.player.added {
+  background: rgb(50 156 14 / 0.5);
+}
+
+.player > img {
+  height: 100%;
+  aspect-ratio: 1/1;
+
+  border-radius: 100%;
+}
+
+.player > h1 {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#action-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}

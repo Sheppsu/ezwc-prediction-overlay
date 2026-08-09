@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>EZWC26 Predictions</title>
+
+        <link rel="stylesheet" type="text/css" href="/public/css/index.css">
+        <script src="/public/js/index.js"></script>
+    </head>
+    <body>
+        <div id="loading-panel" class="hidden"><h1>Connecting...</h1></div>
+        <div id="login-panel" class="panel hidden">
+            <label for="username">Display name</label>
+            <input id="username" type="text" autocomplete="off" data-1p-ignore data-lpignore="true" data-protonpass-ignore="true" data-bwignore>
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="off" data-1p-ignore data-lpignore="true" data-protonpass-ignore="true" data-bwignore>
+            <input id="open-btn" type="button" value="Open predictions">
+            <p id="open-error" class="error-text"></p>
+        </div>
+        <div id="prediction-panel" class="panel hidden">
+            <div id="action-bar">
+                <input id="previous-btn" type="button" value="Previous">
+                <input id="next-btn" type="button" value="Next">
+            </div>
+            <div id="predictions-row"></div>
+            <div class="info-row">
+                <div id="country-info">
+                    <div class="country-name">
+                        <img id="country-flag" src="https://flagsapi.com/US/flat/64.png" />
+                        <h1 id="country-name">United States A</h1>
+                    </div>
+                    <p id="country-2025-placement">2025 Placement: 1st</p>
+                    <p id="country-2025-seeding">2025 Seeding: 1st</p>
+                </div>
+                <div class="players-container">
+                    <h1>2025 Roster</h1>
+                    <h1 id="country-no-team-2025" class="hidden">No team</h1>
+                    <div id="country-roster-2025" class="players-grid"></div>
+                </div>
+                <div class="players-container">
+                    <h1>2026 Roster</h1>
+                    <div id="country-roster-2026" class="players-grid"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
