@@ -51,9 +51,10 @@ class Server:
                             await conn.send(json.dumps({"error": "Name taken"}))
                             continue
                         username = data["username"]
-                        logged_in = True
-                        self.logged_in.append(username)
                         if username not in self.predictions:
+                            if len(self.predictions) >= 4:
+                                await conn.send(json.dumps({"Already at max commentators. Make sure you put the same display name."}))
+                                continue
                             self.predictions[username] = {
                                 "1st": [],
                                 "2nd": [],
@@ -67,6 +68,8 @@ class Server:
                                 "25th-32nd": [],
                                 "DNQ": []
                             }
+                        logged_in = True
+                        self.logged_in.append(username)
                         await conn.send(json.dumps({"type": 1}))
                         await self.broadcast_data()
                     elif evt == 2 and logged_in:
